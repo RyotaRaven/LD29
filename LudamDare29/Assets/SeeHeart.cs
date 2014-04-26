@@ -30,6 +30,7 @@ public class SeeHeart : MonoBehaviour
 		if(stuff.tag=="Holder")
 		{
 			CanPut=true;
+			hold=stuff.GetComponent<Sparkles>();
 		}
 	}
 
@@ -66,7 +67,7 @@ public class SeeHeart : MonoBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.Return) && CanTake && !Holding) 
 		{
-			if(close )
+			if(close)
 			{
 				CanTake=false;
 				Holding=true;
@@ -77,16 +78,27 @@ public class SeeHeart : MonoBehaviour
 					{
 						x.enabled= true;
 						x.material=Emotions[CurrentEmotion];
+						Debug.Log (CurrentEmotion);
+						foreach(MeshRenderer m in hidden)
+						{
+							
+							m.enabled= !m.enabled;
+						}
 					}
 				}
 			}
 		}
 		if (Input.GetKeyDown(KeyCode.Return) && CanPut && Holding) 
 		{
+			bool put=false;
 			Holding=false;
 			foreach(MeshRenderer x in orb)
 			{
-				x.enabled= false;
+				put=hold.HoldEmotion(CurrentEmotion);
+				if(put)
+				{
+					x.enabled=false;
+				}
 			}
 		}
 
