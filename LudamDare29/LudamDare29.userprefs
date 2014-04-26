@@ -2,10 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SeeHeart.cs">
     <Files>
+      <File FileName="Assets\SeeHeart.cs" Line="103" Column="23" />
       <File FileName="Assets\People.cs" Line="1" Column="1" />
-      <File FileName="Assets\SeeHeart.cs" Line="15" Column="15" />
-      <File FileName="Assets\People.cs" Line="1" Column="1" />
-      <File FileName="Assets\Sparkles.cs" Line="1" Column="1" />
+      <File FileName="Assets\Sparkles.cs" Line="25" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

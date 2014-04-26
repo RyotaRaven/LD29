@@ -44,6 +44,7 @@ public class SeeHeart : MonoBehaviour
 		if(stuff.tag=="Holder")
 		{
 			CanPut=false;
+			hold=null;
 		}
 	}
 
@@ -78,7 +79,6 @@ public class SeeHeart : MonoBehaviour
 					{
 						x.enabled= true;
 						x.material=Emotions[CurrentEmotion];
-						Debug.Log (CurrentEmotion);
 						foreach(MeshRenderer m in hidden)
 						{
 							
@@ -99,6 +99,7 @@ public class SeeHeart : MonoBehaviour
 				{
 					x.enabled=false;
 				}
+				else Holding=true;
 			}
 		}
 

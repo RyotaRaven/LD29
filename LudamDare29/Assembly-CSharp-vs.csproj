@@ -49,6 +49,7 @@
      <Compile Include="Assets\People.cs" />
      <Compile Include="Assets\SeeHeart.cs" />
      <Compile Include="Assets\Sparkles.cs" />
+     <Compile Include="Assets\Unlock.cs" />
      <None Include="Assets\Standard Assets\Glass Refraction (Pro Only)\Sources\Shaders\Glass-Stained-BumpDistort.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />

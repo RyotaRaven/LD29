@@ -5,6 +5,7 @@ public class Sparkles : MonoBehaviour {
 
 	public int RequiredEmotion;
 	public Material myEmotion;
+	public bool Triggered;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,7 @@ public class Sparkles : MonoBehaviour {
 		if(PutEmotion==RequiredEmotion)
 		{
 			renderer.material=myEmotion;
+			Triggered=true;
 			return true;
 		}
 		else return false;
