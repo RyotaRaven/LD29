@@ -8,7 +8,12 @@ public class SeeHeart : MonoBehaviour
 	public bool CanTake;
 	public bool Holding;
 	public bool close;
+	public bool CanPut;
 	public MeshRenderer[] orb;
+	private int CurrentEmotion;
+	private People person;
+	private Sparkles hold;
+	public Material[] Emotions;
 	// Use this for initialization
 	void Start () 
 	{
@@ -19,8 +24,12 @@ public class SeeHeart : MonoBehaviour
 	{
 		if(stuff.tag=="People")
 		{
-			Debug.Log("TRIGGER");
 			close=true;
+			person=stuff.GetComponent<People>();
+		}
+		if(stuff.tag=="Holder")
+		{
+			CanPut=true;
 		}
 	}
 
@@ -28,8 +37,12 @@ public class SeeHeart : MonoBehaviour
 	{
 		if(stuff.tag=="People")
 		{
-			Debug.Log("END TRIGGER");
-			//close=false;
+			close=false;
+			person=null;
+		}
+		if(stuff.tag=="Holder")
+		{
+			CanPut=false;
 		}
 	}
 
@@ -53,16 +66,27 @@ public class SeeHeart : MonoBehaviour
 		}
 		if (Input.GetKeyDown(KeyCode.Return) && CanTake && !Holding) 
 		{
-			Debug.Log (close);
-			if(close)
+			if(close )
 			{
-				Debug.Log ("Take");
 				CanTake=false;
 				Holding=true;
 				foreach(MeshRenderer x in orb)
 				{
-					x.enabled= true;
+					CurrentEmotion=person.TakeEmotion();
+					if(CurrentEmotion!=-1)
+					{
+						x.enabled= true;
+						x.material=Emotions[CurrentEmotion];
+					}
 				}
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Return) && CanPut && Holding) 
+		{
+			Holding=false;
+			foreach(MeshRenderer x in orb)
+			{
+				x.enabled= false;
 			}
 		}
 
