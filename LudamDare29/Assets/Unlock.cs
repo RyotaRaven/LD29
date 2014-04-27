@@ -24,9 +24,10 @@ public class Unlock : MonoBehaviour {
 			canOpen [i] = Triggers [i].GetComponent<Sparkles> ().Triggered;
 		if(canOpen.Length>=2)
 		{
-			for(int x=1; x<canOpen.Length; x++)
+			Open=canOpen[0] && canOpen[1];
+			for(int x=2; x<canOpen.Length; x++)
 			{
-				Open=canOpen[x-1] && canOpen[x];
+				Open= Open &&canOpen[x];
 			}
 		}
 		else

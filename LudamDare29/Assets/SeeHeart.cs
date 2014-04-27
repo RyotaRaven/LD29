@@ -66,7 +66,7 @@ public class SeeHeart : MonoBehaviour
 			}
 
 		}
-		if (Input.GetKeyDown(KeyCode.Return) && CanTake && !Holding) 
+		if (Input.GetKeyDown(KeyCode.Mouse0) && CanTake && !Holding) 
 		{
 			if(close)
 			{
@@ -88,7 +88,7 @@ public class SeeHeart : MonoBehaviour
 				}
 			}
 		}
-		if (Input.GetKeyDown(KeyCode.Return) && CanPut && Holding) 
+		if (Input.GetKeyDown(KeyCode.Mouse0) && CanPut && Holding) 
 		{
 			bool put=false;
 			Holding=false;
