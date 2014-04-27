@@ -4,7 +4,7 @@ using System.Collections;
 
 public class SeeHeart : MonoBehaviour 
 {
-	public MeshRenderer[] hidden;
+	public MeshRenderer[] Hidden;
 	public bool CanTake;
 	public bool Holding;
 	public bool close;
@@ -23,7 +23,7 @@ public class SeeHeart : MonoBehaviour
 	void OnTriggerEnter(Collider stuff)
 	{
 		if(stuff.tag=="People")
-		{
+		{	
 			close=true;
 			person=stuff.GetComponent<People>();
 		}
@@ -53,9 +53,8 @@ public class SeeHeart : MonoBehaviour
 	{
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
-			foreach(MeshRenderer m in hidden)
+			foreach(MeshRenderer m in Hidden)
 			{
-
 				m.enabled= !m.enabled;
 				if(m.enabled==true)
 				{
@@ -79,7 +78,7 @@ public class SeeHeart : MonoBehaviour
 					{
 						x.enabled= true;
 						x.material=Emotions[CurrentEmotion];
-						foreach(MeshRenderer m in hidden)
+						foreach(MeshRenderer m in Hidden)
 						{
 							
 							m.enabled= !m.enabled;
